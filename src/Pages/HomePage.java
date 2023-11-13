@@ -63,6 +63,18 @@ public class HomePage extends JFrame {
 		NavigateGateDash_b.setBounds(0, 0, 128, 35);
 		Header.add(NavigateGateDash_b);
 		
+		JButton genre = new JButton("genre");
+		genre.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				genres gr = new genres();
+				gr.show();
+				dispose();
+			}
+		});
+		genre.setBounds(777, 3, 117, 29);
+		Header.add(genre);
+		
 		JPanel panel_0 = new JPanel();
 		panel_0.setBackground(Color.LIGHT_GRAY);
 		panel_0.setBounds(39, 75, 133, 174);
