@@ -12,12 +12,12 @@ import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
-import javax.swing.JMenuItem;
 
 public class genres extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JTextField searchGenreField;
 
 	/**
 	 * Launch the application.
@@ -145,6 +145,15 @@ public class genres extends JFrame {
         });
         menu.setBounds(10, 495, 117, 29);
         panel_1.add(menu);
+        
+        searchGenreField = new JTextField();
+        searchGenreField.setBounds(10, 127, 198, 26);
+        panel_1.add(searchGenreField);
+        searchGenreField.setColumns(10);
+        
+        JButton searchGenreButton = new JButton("search");
+        searchGenreButton.setBounds(206, 127, 117, 29);
+        panel_1.add(searchGenreButton);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBounds(383, 79, 133, 174);
@@ -181,5 +190,8 @@ public class genres extends JFrame {
 		JButton DOWN = new JButton("DOWN");
 		DOWN.setBounds(743, 506, 117, 29);
 		panel.add(DOWN);
+		
 	}
+	
+	
 }

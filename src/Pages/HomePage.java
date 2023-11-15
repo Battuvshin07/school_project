@@ -5,17 +5,18 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JMenuBar;
 import java.awt.Color;
 import javax.swing.JButton;
-import javax.swing.JScrollBar;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+
 
 public class HomePage extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JTextField tsearchHomeField;
 
 	/**
 	 * Launch the application.
@@ -74,6 +75,15 @@ public class HomePage extends JFrame {
 		});
 		genre.setBounds(777, 3, 117, 29);
 		Header.add(genre);
+		
+		tsearchHomeField = new JTextField();
+		tsearchHomeField.setBounds(286, 3, 296, 26);
+		Header.add(tsearchHomeField);
+		tsearchHomeField.setColumns(10);
+		
+		JButton searchHomeButton = new JButton("search");
+		searchHomeButton.setBounds(589, 3, 117, 29);
+		Header.add(searchHomeButton);
 		
 		JPanel panel_0 = new JPanel();
 		panel_0.setBackground(Color.LIGHT_GRAY);
