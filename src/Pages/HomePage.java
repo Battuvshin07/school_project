@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import javax.swing.JTextArea;
 
 
 public class HomePage extends JFrame {
@@ -80,10 +81,6 @@ public class HomePage extends JFrame {
 		tsearchHomeField.setBounds(286, 3, 296, 26);
 		Header.add(tsearchHomeField);
 		tsearchHomeField.setColumns(10);
-		
-		JButton searchHomeButton = new JButton("search");
-		searchHomeButton.setBounds(589, 3, 117, 29);
-		Header.add(searchHomeButton);
 		
 		JPanel panel_0 = new JPanel();
 		panel_0.setBackground(Color.LIGHT_GRAY);

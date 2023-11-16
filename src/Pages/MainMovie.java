@@ -68,7 +68,7 @@ public class MainMovie extends JFrame {
 				dispose();
 				
 			}
-		});//dfghjhtrerty
+		});
 		
 		JButton signinButton = new JButton("Нэвтрэх\n");
 		signinButton.setBounds(78, 144, 199, 76);
