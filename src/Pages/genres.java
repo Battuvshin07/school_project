@@ -59,82 +59,29 @@ public class genres extends JFrame {
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JComboBox<String> dropDownList = new JComboBox<String>();
-        dropDownList.setToolTipText("GENRES");
-        dropDownList.addItem("Action");
-        dropDownList.addItem("Adventure");
-        dropDownList.addItem("Animation");
-        dropDownList.addItem("Comedy");
-        dropDownList.addItem("Crime");
-        dropDownList.addItem("Drama");
-        dropDownList.addItem("Fantasy");
-        dropDownList.addItem("Horror");
-        dropDownList.addItem("Mystery");
-        dropDownList.addItem("Romance");
-        dropDownList.addItem("Science Fiction");
-        dropDownList.addItem("Thriller");
-        dropDownList.addItem("War");
-        dropDownList.addItem("Western");
-        dropDownList.addItem("Documentary");
-        dropDownList.addItem("Family");
-        dropDownList.addItem("Musical");
-        dropDownList.addItem("Biography");
-        dropDownList.addItem("History");
-        dropDownList.addItem("Sport");
-        dropDownList.setBounds(10, 10, 220, 25);
-        panel_1.add(dropDownList);
+		JComboBox<String> comboBoxgenre1 = new JComboBox<String>();
+		comboBoxgenre1.setBounds(10, 252, 165, 22);
+		comboBoxgenre1.setEditable(false);  // Set to non-editable
+		panel_1.add(comboBoxgenre1);
 
-        // Second JComboBox with movie genres
-        JComboBox<String> dropDownList_1 = new JComboBox<String>();
-        dropDownList_1.setToolTipText("GENRES");
-        dropDownList_1.addItem("Action");
-        dropDownList_1.addItem("Adventure");
-        dropDownList_1.addItem("Animation");
-        dropDownList_1.addItem("Comedy");
-        dropDownList_1.addItem("Crime");
-        dropDownList_1.addItem("Drama");
-        dropDownList_1.addItem("Fantasy");
-        dropDownList_1.addItem("Horror");
-        dropDownList_1.addItem("Mystery");
-        dropDownList_1.addItem("Romance");
-        dropDownList_1.addItem("Science Fiction");
-        dropDownList_1.addItem("Thriller");
-        dropDownList_1.addItem("War");
-        dropDownList_1.addItem("Western");
-        dropDownList_1.addItem("Documentary");
-        dropDownList_1.addItem("Family");
-        dropDownList_1.addItem("Musical");
-        dropDownList_1.addItem("Biography");
-        dropDownList_1.addItem("History");
-        dropDownList_1.addItem("Sport");
-        dropDownList_1.setBounds(10, 47, 220, 25);
-        panel_1.add(dropDownList_1);
+		JComboBox<String> comboBoxgenre2 = new JComboBox<String>();
+		comboBoxgenre2.setBounds(10, 285, 165, 22);
+		comboBoxgenre2.setEditable(false);  // Set to non-editable
+		panel_1.add(comboBoxgenre2);
 
-        // Third JComboBox with movie genres
-        JComboBox<String> dropDownList_2 = new JComboBox<String>();
-        dropDownList_2.setToolTipText("GENRES");
-        dropDownList_2.addItem("Action");
-        dropDownList_2.addItem("Adventure");
-        dropDownList_2.addItem("Animation");
-        dropDownList_2.addItem("Comedy");
-        dropDownList_2.addItem("Crime");
-        dropDownList_2.addItem("Drama");
-        dropDownList_2.addItem("Fantasy");
-        dropDownList_2.addItem("Horror");
-        dropDownList_2.addItem("Mystery");
-        dropDownList_2.addItem("Romance");
-        dropDownList_2.addItem("Science Fiction");
-        dropDownList_2.addItem("Thriller");
-        dropDownList_2.addItem("War");
-        dropDownList_2.addItem("Western");
-        dropDownList_2.addItem("Documentary");
-        dropDownList_2.addItem("Family");
-        dropDownList_2.addItem("Musical");
-        dropDownList_2.addItem("Biography");
-        dropDownList_2.addItem("History");
-        dropDownList_2.addItem("Sport");
-        dropDownList_2.setBounds(10, 90, 220, 25);
-        panel_1.add(dropDownList_2);
+		JComboBox<String> comboBoxgenre3 = new JComboBox<String>();
+		comboBoxgenre3.setBounds(10, 318, 165, 22);
+		comboBoxgenre3.setEditable(false);  // Set to non-editable
+		panel_1.add(comboBoxgenre3);
+
+		String[] genres = {"Action", "Adventure", "Animation", "Comedy", "Crime", "Drama", "Fantasy", "Horror", "Mystery", "Romance", "Science Fiction", "Thriller", "War", "Western", "Documentary", "Family", "Musical", "Biography", "History", "Sport"};
+
+		for (String genre : genres) {
+		    comboBoxgenre1.addItem(genre);
+		    comboBoxgenre2.addItem(genre);
+		    comboBoxgenre3.addItem(genre);
+		}
+
         
         JButton menu = new JButton("MENU");
         menu.addActionListener(new ActionListener() {
@@ -151,11 +98,13 @@ public class genres extends JFrame {
         searchGenreField.setBounds(76, 127, 198, 26);
         panel_1.add(searchGenreField);
         searchGenreField.setColumns(10);
+       
         
         JTextArea txtrSearch = new JTextArea();
-        txtrSearch.setBackground(Color.WHITE);
+        txtrSearch.setBackground(Color.white);
         txtrSearch.setText("search");
         txtrSearch.setBounds(20, 132, 42, 16);
+        txtrSearch.setEditable(false);
         panel_1.add(txtrSearch);
 		
 		JPanel panel_2 = new JPanel();
