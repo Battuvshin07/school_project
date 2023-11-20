@@ -21,6 +21,10 @@ public class adminBoardAdd extends JFrame {
     private JTextField textnameField;
     private JTextField textField;
     private JTextField textField_1;
+    private JTextField textField_2;
+    private JTextField textField_3;
+    private JTextField textField_4;
+    private JTextField textField_5;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -134,8 +138,47 @@ public class adminBoardAdd extends JFrame {
         basePanel.add(textField_1);
         
         JButton uploadButton = new JButton("Upload");
-        uploadButton.setBounds(582, 102, 89, 23);
+        uploadButton.setBounds(582, 429, 89, 23);
         basePanel.add(uploadButton);
+        
+        JTextArea txtrCast = new JTextArea();
+        txtrCast.setText("Cast :");
+        txtrCast.setEditable(false);
+        txtrCast.setBackground(Color.LIGHT_GRAY);
+        txtrCast.setBounds(356, 101, 69, 22);
+        basePanel.add(txtrCast);
+        
+        textField_2 = new JTextField();
+        textField_2.setColumns(10);
+        textField_2.setBounds(435, 101, 236, 20);
+        basePanel.add(textField_2);
+        
+        textField_3 = new JTextField();
+        textField_3.setColumns(10);
+        textField_3.setBounds(435, 133, 236, 20);
+        basePanel.add(textField_3);
+        
+        textField_4 = new JTextField();
+        textField_4.setColumns(10);
+        textField_4.setBounds(435, 164, 236, 20);
+        basePanel.add(textField_4);
+        
+        textField_5 = new JTextField();
+        textField_5.setColumns(10);
+        textField_5.setBounds(435, 197, 236, 20);
+        basePanel.add(textField_5);
+        
+        JTextArea txtrLanguage = new JTextArea();
+        txtrLanguage.setText("Language :");
+        txtrLanguage.setEditable(false);
+        txtrLanguage.setBackground(Color.LIGHT_GRAY);
+        txtrLanguage.setBounds(356, 230, 69, 22);
+        basePanel.add(txtrLanguage);
+        
+        JComboBox<String> comboBoxlanguage = new JComboBox<String>();
+        comboBoxlanguage.setEditable(false);
+        comboBoxlanguage.setBounds(433, 228, 165, 22);
+        basePanel.add(comboBoxlanguage);
 
         String[] genres = {"Action", "Adventure", "Animation", "Comedy", "Crime", "Drama", "Fantasy", "Horror", "Mystery", "Romance", "Science Fiction", "Thriller", "War", "Western", "Documentary", "Family", "Musical", "Biography", "History", "Sport"};
 
@@ -143,6 +186,12 @@ public class adminBoardAdd extends JFrame {
             comboBoxgenre1.addItem(genre);
             comboBoxgenre2.addItem(genre);
             comboBoxgenre3.addItem(genre);
+        }
+        
+        String[] language = {"Mongolia", "English", "Japan"};
+        
+        for (String languages : language) {
+        	comboBoxlanguage.addItem(languages);
         }
     }
 }
