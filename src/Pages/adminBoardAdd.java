@@ -12,7 +12,7 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import javax.swing.JButton;
 
-public class adminBoard extends JFrame {
+public class adminBoardAdd extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
@@ -26,7 +26,7 @@ public class adminBoard extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    adminBoard frame = new adminBoard();
+                    adminBoardAdd frame = new adminBoardAdd();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -35,7 +35,7 @@ public class adminBoard extends JFrame {
         });
     }
 
-    public adminBoard() {
+    public adminBoardAdd() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 712, 515);
         contentPane = new JPanel();
