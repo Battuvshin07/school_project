@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 
 
-public class HomePage extends JFrame {
+public class homePage extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -26,7 +26,7 @@ public class HomePage extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					HomePage frame = new HomePage();
+					homePage frame = new homePage();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +38,7 @@ public class HomePage extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public HomePage() {
+	public homePage() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 575);
 		contentPane = new JPanel();

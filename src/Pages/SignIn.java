@@ -70,7 +70,7 @@ public class SignIn extends JFrame {
 		Sign_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				HomePage mm  = new HomePage();
+				homePage mm  = new homePage();
 				mm.show();
 				dispose();
 			}

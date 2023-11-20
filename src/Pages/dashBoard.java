@@ -87,7 +87,7 @@ public class dashBoard extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				HomePage hp = new HomePage();
+				homePage hp = new homePage();
 				hp.show();
 				dispose();
 			}

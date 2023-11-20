@@ -75,7 +75,7 @@ public class Profile extends JFrame {
 		JButton btnNewButton = new JButton("HOME PAGE");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				HomePage hp = new HomePage();
+				homePage hp = new homePage();
 				hp.show();
 				dispose();
 			}
