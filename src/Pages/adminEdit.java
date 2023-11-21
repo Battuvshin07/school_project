@@ -10,6 +10,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
+import javax.swing.JButton;
 
 public class adminEdit extends JFrame {
 
@@ -18,6 +19,8 @@ public class adminEdit extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
 
 	/**
 	 * Launch the application.
@@ -40,7 +43,7 @@ public class adminEdit extends JFrame {
 	 */
 	public adminEdit() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 775, 466);
+		setBounds(100, 100, 593, 458);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -49,7 +52,7 @@ public class adminEdit extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.LIGHT_GRAY);
-		panel.setBounds(6, 6, 763, 426);
+		panel.setBounds(6, 6, 579, 418);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -124,6 +127,34 @@ public class adminEdit extends JFrame {
 		textField_2.setColumns(10);
 		textField_2.setBounds(35, 261, 264, 143);
 		panel.add(textField_2);
+		
+		JTextArea txtrImage = new JTextArea();
+		txtrImage.setText("Image :");
+		txtrImage.setEditable(false);
+		txtrImage.setBackground(Color.LIGHT_GRAY);
+		txtrImage.setBounds(301, 27, 69, 22);
+		panel.add(txtrImage);
+		
+		JTextArea txtrMovie = new JTextArea();
+		txtrMovie.setText("Movie :");
+		txtrMovie.setEditable(false);
+		txtrMovie.setBackground(Color.LIGHT_GRAY);
+		txtrMovie.setBounds(301, 55, 69, 22);
+		panel.add(txtrMovie);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(361, 22, 130, 26);
+		panel.add(textField_3);
+		textField_3.setColumns(10);
+		
+		textField_4 = new JTextField();
+		textField_4.setBounds(361, 55, 130, 26);
+		panel.add(textField_4);
+		textField_4.setColumns(10);
+		
+		JButton btnNewButton = new JButton("DONE");
+		btnNewButton.setBounds(372, 369, 117, 29);
+		panel.add(btnNewButton);
 	}
 
 }
