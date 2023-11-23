@@ -32,9 +32,7 @@ public class MainMovie extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public MainMovie() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 853, 531);
@@ -50,14 +48,14 @@ public class MainMovie extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(6, 5, 359, 492);
-		panel.add(panel_1);
-		panel_1.setLayout(null);
+		JPanel button_panel = new JPanel();
+		button_panel.setBounds(6, 5, 359, 492);
+		panel.add(button_panel);
+		button_panel.setLayout(null);
 		
 		JButton signupButton = new JButton("бүртгүүлэх");
 		signupButton.setBounds(78, 251, 199, 76);
-		panel_1.add(signupButton);
+		button_panel.add(signupButton);
 		signupButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -70,12 +68,12 @@ public class MainMovie extends JFrame {
 		
 		JButton signinButton = new JButton("Нэвтрэх\n");
 		signinButton.setBounds(78, 144, 199, 76);
-		panel_1.add(signinButton);
+		button_panel.add(signinButton);
 		
-		JPanel panel_3 = new JPanel();
-		panel_3.setLayout(null);
-		panel_3.setBounds(380, 6, 455, 491);
-		panel.add(panel_3);
+		JPanel side_panel = new JPanel();
+		side_panel.setLayout(null);
+		side_panel.setBounds(380, 6, 455, 491);
+		panel.add(side_panel);
 		signinButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				

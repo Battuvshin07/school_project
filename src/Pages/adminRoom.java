@@ -9,11 +9,13 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
 
 public class adminRoom extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JTextField deletebyid;
 
 	/**
 	 * Launch the application.
@@ -63,6 +65,14 @@ public class adminRoom extends JFrame {
 		panel.add(uploadButton);
 		
 		JButton editMovie = new JButton("EDIT");
+		editMovie.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				adminEdit ae = new adminEdit();
+				ae.show();
+				dispose();
+			}
+		});
 		editMovie.setBounds(26, 70, 117, 29);
 		panel.add(editMovie);
 		
@@ -82,6 +92,11 @@ public class adminRoom extends JFrame {
 		JButton deleteButton = new JButton("Delete");
 		deleteButton.setBounds(26, 152, 117, 29);
 		panel.add(deleteButton);
+		
+		deletebyid = new JTextField();
+		deletebyid.setBounds(151, 152, 130, 26);
+		panel.add(deletebyid);
+		deletebyid.setColumns(10);
 	}
 
 }

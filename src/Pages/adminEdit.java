@@ -11,6 +11,8 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class adminEdit extends JFrame {
 
@@ -153,6 +155,14 @@ public class adminEdit extends JFrame {
 		textField_4.setColumns(10);
 		
 		JButton btnNewButton = new JButton("DONE");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				adminRoom ar = new adminRoom();
+				ar.show();
+				dispose();
+			}
+		});
 		btnNewButton.setBounds(372, 369, 117, 29);
 		panel.add(btnNewButton);
 	}
