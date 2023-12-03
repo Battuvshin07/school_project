@@ -10,9 +10,15 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
 
 public class genres extends JFrame {
 
@@ -49,7 +55,7 @@ public class genres extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(Color.LIGHT_GRAY);
+		panel.setBackground(Color.GRAY);
 		panel.setBounds(0, 0, 866, 541);
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -107,30 +113,6 @@ public class genres extends JFrame {
         txtrSearch.setEditable(false);
         panel_1.add(txtrSearch);
 		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(383, 79, 133, 174);
-		panel.add(panel_2);
-		
-		JPanel panel_2_1 = new JPanel();
-		panel_2_1.setBounds(535, 79, 133, 174);
-		panel.add(panel_2_1);
-		
-		JPanel panel_2_2 = new JPanel();
-		panel_2_2.setBounds(690, 79, 133, 174);
-		panel.add(panel_2_2);
-		
-		JPanel panel_2_3 = new JPanel();
-		panel_2_3.setBounds(690, 276, 133, 174);
-		panel.add(panel_2_3);
-		
-		JPanel panel_2_4 = new JPanel();
-		panel_2_4.setBounds(535, 276, 133, 174);
-		panel.add(panel_2_4);
-		
-		JPanel panel_2_5 = new JPanel();
-		panel_2_5.setBounds(383, 276, 133, 174);
-		panel.add(panel_2_5);
-		
 		JButton UP = new JButton("UP");
 		UP.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -142,6 +124,97 @@ public class genres extends JFrame {
 		JButton DOWN = new JButton("DOWN");
 		DOWN.setBounds(743, 506, 117, 29);
 		panel.add(DOWN);
+		
+		JLabel label_0 = new JLabel("Movie 0");
+		label_0.setOpaque(true);
+		label_0.setHorizontalAlignment(SwingConstants.CENTER);
+		label_0.setBackground(Color.LIGHT_GRAY);
+		label_0.setBounds(383, 79, 133, 174);
+		panel.add(label_0);
+		
+		label_0.addMouseListener((MouseListener) new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                
+                JOptionPane.showMessageDialog(genres.this, "Movie 0 Clicked!");
+            }
+        });
+		
+		JLabel label_1 = new JLabel("Movie 1");
+		label_1.setOpaque(true);
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setBackground(Color.LIGHT_GRAY);
+		label_1.setBounds(535, 79, 133, 174);
+		panel.add(label_1);
+		
+		label_1.addMouseListener((MouseListener) new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				JOptionPane.showMessageDialog(genres.this, "Movie 1 Clicked!");
+			}
+		});		
+		
+		
+		JLabel label_2 = new JLabel("Movie 2");
+		label_2.setOpaque(true);
+		label_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_2.setBackground(Color.LIGHT_GRAY);
+		label_2.setBounds(690, 79, 133, 174);
+		panel.add(label_2);
+		
+		label_2.addMouseListener((MouseListener) new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				JOptionPane.showMessageDialog(genres.this, "Movie 2 Clicked!");
+			}
+		});	
+		
+		JLabel label_3 = new JLabel("Movie 3");
+		label_3.setOpaque(true);
+		label_3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_3.setBackground(Color.LIGHT_GRAY);
+		label_3.setBounds(383, 276, 133, 174);
+		panel.add(label_3);
+		
+		label_3.addMouseListener((MouseListener) new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				JOptionPane.showMessageDialog(genres.this, "Movie 3 Clicked!");
+			}
+		});	
+		
+		JLabel label_4 = new JLabel("Movie 4");
+		label_4.setOpaque(true);
+		label_4.setHorizontalAlignment(SwingConstants.CENTER);
+		label_4.setBackground(Color.LIGHT_GRAY);
+		label_4.setBounds(535, 276, 133, 174);
+		panel.add(label_4);
+		
+		label_4.addMouseListener((MouseListener) new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				JOptionPane.showMessageDialog(genres.this, "Movie 4 Clicked!");
+			}
+		});	
+		
+		JLabel label_5 = new JLabel("Movie 5");
+		label_5.setOpaque(true);
+		label_5.setHorizontalAlignment(SwingConstants.CENTER);
+		label_5.setBackground(Color.LIGHT_GRAY);
+		label_5.setBounds(690, 276, 133, 174);
+		panel.add(label_5);
+		
+		label_5.addMouseListener((MouseListener) new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				JOptionPane.showMessageDialog(genres.this, "Movie 5 Clicked!");
+			}
+		});	
 		
 	}
 }
