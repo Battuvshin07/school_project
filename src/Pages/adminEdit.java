@@ -1,4 +1,4 @@
-package Pages;
+   package Pages;
 
 import java.awt.EventQueue;
 
@@ -131,7 +131,7 @@ public class adminEdit extends JFrame {
 		panel.add(textField_2);
 		
 		JTextArea txtrImage = new JTextArea();
-		txtrImage.setText("Image :");
+		txtrImage.setText("cost :");
 		txtrImage.setEditable(false);
 		txtrImage.setBackground(Color.LIGHT_GRAY);
 		txtrImage.setBounds(301, 27, 69, 22);
