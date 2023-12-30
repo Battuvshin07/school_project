@@ -1,4 +1,4 @@
-package PaymentProcessor;
+package functions;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -27,7 +27,7 @@ public class MoviePaymentSystem extends JFrame {
         calculateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                calculatePayment();
+                calculatePayment();	
             }
         });
 
