@@ -35,7 +35,7 @@ public class Profile extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Create the frame.  
 	 */
 	public Profile() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
