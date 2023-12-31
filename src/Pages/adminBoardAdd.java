@@ -244,16 +244,17 @@ public class adminBoardAdd extends JFrame {
         basePanel.add(txtID);
 
         String[] genres = {"Action", "Adventure", "Animation", "Comedy", "Crime", "Drama", "Fantasy", "Horror", "Mystery", "Romance", "Science Fiction", "Thriller", "War", "Western", "Documentary", "Family", "Musical", "Biography", "History", "Sport"};
-        
+
         for (String genre : genres) {
             comboBoxgenre1.addItem(genre);
         }
-        
+
         String[] languages = {"MONGOLIA", "ENGLISH", "JAPAN"};
-        
+
         for (String language : languages) {
-            comboBoxgenre1.addItem(language);
+            comboBoxgenre2.addItem(language); 
         }
+
     }
 }
 
