@@ -199,7 +199,7 @@ public class SignIn extends JFrame {
 		backgroundPicture.setBounds(0, 0, 1920, 1001);
 		panel.add(backgroundPicture);
 		
-	
+
 	}
 }
 
