@@ -19,6 +19,22 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.awt.EventQueue;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 import javax.swing.JButton;
 
@@ -35,6 +51,7 @@ public class adminBoardAdd extends JFrame {
     private JTextField txtcast_3;
     private JTextField txtmovieCost;
     private JTextField txtID;
+    private String selectedImagePath;
 	protected JComboBox<String> comboBoxlanguage;
 
     public static void main(String[] args) {
@@ -60,7 +77,7 @@ public class adminBoardAdd extends JFrame {
 
         JPanel basePanel = new JPanel();
         basePanel.setBackground(Color.LIGHT_GRAY);
-        basePanel.setBounds(0, 0, 816, 484);
+        basePanel.setBounds(-12, 0, 816, 484);
         contentPane.add(basePanel);
         basePanel.setLayout(null);
 
@@ -98,14 +115,9 @@ public class adminBoardAdd extends JFrame {
         basePanel.add(comboBoxgenre1);
 
         JComboBox<String> comboBoxgenre2 = new JComboBox<String>();
-        comboBoxgenre2.setBounds(445, 177, 165, 22);
+        comboBoxgenre2.setBounds(435, 176, 165, 22);
         comboBoxgenre2.setEditable(false);  // Set to non-editable
         basePanel.add(comboBoxgenre2);
-
-        JComboBox<String> comboBoxgenre3 = new JComboBox<String>();
-        comboBoxgenre3.setBounds(45, 177, 165, 22);
-        comboBoxgenre3.setEditable(false);  // Set to non-editable
-        basePanel.add(comboBoxgenre3);
         
         txttitle = new JTextField();
         txttitle.setBounds(135, 54, 86, 20);
@@ -154,8 +166,9 @@ public class adminBoardAdd extends JFrame {
         txtcast_1.setBounds(435, 54, 236, 20);
         basePanel.add(txtcast_1);
         
-        JButton btnuploadButton = new JButton("Upload");    
-        btnuploadButton.addActionListener(new ActionListener() {
+        
+        JButton btnaddButton = new JButton("Upload");    
+        btnaddButton.addActionListener(new ActionListener() {
             @SuppressWarnings("deprecation")
             public void actionPerformed(ActionEvent e) {
                 String Stitle = txttitle.getText();
@@ -173,7 +186,7 @@ public class adminBoardAdd extends JFrame {
                     try {
                         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/movie_rental", "root", "PHW#84#jeor");
 
-                        String query = "INSERT INTO movie(movie_id, title, rating, description, cast, cost, genre, language) VALUES(?,?,?,?,?,?,?,?)";
+                        String query = "INSERT INTO movie(movie_id, title, rating, description, cast, cost, genre, language, image) VALUES(?,?,?,?,?,?,?,?,?)";
                         PreparedStatement pst = con.prepareStatement(query);
                         pst.setString(1, Smovieid);
                         pst.setString(2, Stitle);
@@ -183,22 +196,39 @@ public class adminBoardAdd extends JFrame {
                         pst.setString(6, Smoviecost);
                         pst.setString(7, Sgenre);
                         pst.setString(8, Slanguage);
+                        
+                        // Open a file chooser to select an image
+                        JFileChooser fileChooser = new JFileChooser();
+                        int result = fileChooser.showOpenDialog(null);
 
-                        int rowsAffected = pst.executeUpdate();
-                        if (rowsAffected > 0) {
-                            JOptionPane.showMessageDialog(null, "Upload Successfully.");
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Error.");
+                        if (result == JFileChooser.APPROVE_OPTION) {
+                            File selectedFile = fileChooser.getSelectedFile();
+                            String imagePath = selectedFile.getAbsolutePath();
+                            
+                            // Read the image file and convert it to bytes
+                            byte[] imageData = Files.readAllBytes(Paths.get(imagePath));
+
+                            // Set the image data as a BLOB
+                            pst.setBytes(9, imageData);
+
+                            int rowsAffected = pst.executeUpdate();
+                            if (rowsAffected > 0) {
+                                JOptionPane.showMessageDialog(null, "Upload Successfully.");
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Error.");
+                            }
                         }
+
                         con.close();
-                    } catch (SQLException e1) {
+                    } catch (SQLException | IOException e1) {
                         e1.printStackTrace();
                     }
                 }
             }
+
         });
-        btnuploadButton.setBounds(561, 425, 114, 29);
-        basePanel.add(btnuploadButton);
+        btnaddButton.setBounds(561, 425, 114, 29);
+        basePanel.add(btnaddButton);
         JTextArea txtrCast = new JTextArea();
         txtrCast.setFont(new Font("Monospaced", Font.PLAIN, 15));
         txtrCast.setText("Cast :");
@@ -242,11 +272,26 @@ public class adminBoardAdd extends JFrame {
         txtID.setColumns(10);
         txtID.setBounds(135, 21, 86, 20);
         basePanel.add(txtID);
-
+        
+        JButton btnaddPicture = new JButton("Add picture");
+        
+        btnaddPicture.setBounds(435, 210, 128, 21);
+        basePanel.add(btnaddPicture);
+        btnaddPicture.addActionListener(e -> {
+            JFileChooser fileChooser = new JFileChooser();
+            int result = fileChooser.showOpenDialog(this);
+            if (result == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = fileChooser.getSelectedFile();
+                selectedImagePath = selectedFile.getAbsolutePath();
+                displayImage(selectedImagePath);
+            }
+        });
+       
         String[] genres = {"Action", "Adventure", "Animation", "Comedy", "Crime", "Drama", "Fantasy", "Horror", "Mystery", "Romance", "Science Fiction", "Thriller", "War", "Western", "Documentary", "Family", "Musical", "Biography", "History", "Sport"};
 
         for (String genre : genres) {
             comboBoxgenre1.addItem(genre);
+            
         }
 
         String[] languages = {"MONGOLIA", "ENGLISH", "JAPAN"};
@@ -254,7 +299,14 @@ public class adminBoardAdd extends JFrame {
         for (String language : languages) {
             comboBoxgenre2.addItem(language); 
         }
+        
+        
 
     }
+
+	private void displayImage(String selectedImagePath2) {
+		// TODO Auto-generated method stub
+		
+	}
 }
 
